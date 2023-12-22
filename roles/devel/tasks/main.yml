@@ -1,0 +1,59 @@
+---
+
+- !pacman
+  name: Install development utilities
+  package: "{{ item }}"
+  with:
+    items:
+      - jq
+      - git
+      - nmap
+      - httpie
+
+- !pacman
+  name: Install python devel
+  package: "{{ item }}"
+  with:
+    items:
+      - python-pip
+      - python-pipx
+
+- !pacman
+  name: Install golang devel
+  package: "{{ item }}"
+  with:
+    items:
+      - go
+
+- !pacman
+  name: Install js devel
+  package: "{{ item }}"
+  with:
+    items:
+      - npm
+      - nodejs
+
+- !pacman
+  name: Install kubernetes tools
+  package: "{{ item }}"
+  with:
+    items:
+      - k9s
+      - helm
+      - kubectl
+
+- !pacman
+  name: Install docker
+  package: "{{ item }}"
+  with:
+    items:
+      - docker
+      - docker-buildx
+      - docker-compose
+
+- !user
+  name: Add user to docker group
+  user: "{{ user }}"
+  groups:
+    - docker
+  append: true

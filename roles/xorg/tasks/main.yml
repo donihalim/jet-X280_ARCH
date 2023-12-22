@@ -1,0 +1,45 @@
+---
+
+- !pacman
+  name: Install X display server
+  package: "{{ item }}"
+  with:
+    items:
+      - xorg
+      - xorg-xinit
+
+- !pacman
+  name: Install Intel GPU driver
+  package: "{{ item }}"
+  with:
+    items:
+      - mesa
+      - vulkan-intel
+      - intel-media-driver
+      - libva-intel-driver
+
+- !pacman
+  name: Install input driver
+  package: "{{ item }}"
+  with:
+    items:
+      - xf86-input-evdev
+      - xf86-input-libinput
+
+- !copy
+  name: Configure trackpoint
+  src: 20-trackpoint.conf
+  dest: /etc/X11/xorg.conf.d/20-trackpoint.conf
+  attributes:
+    owner: root
+    group: root
+    mode: 0o644
+
+- !copy
+  name: Configure touchpad
+  src: 30-touchpad.conf
+  dest: /etc/X11/xorg.conf.d/30-touchpad.conf
+  attributes:
+    owner: root
+    group: root
+    mode: 0o644

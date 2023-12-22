@@ -1,0 +1,6 @@
+---
+
+name: xorg
+
+tasks:
+  - main.yml

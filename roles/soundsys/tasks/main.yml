@@ -1,0 +1,27 @@
+---
+
+- !pacman
+  name: Install PipeWire sound system
+  package: "{{ item }}"
+  with:
+    items:
+      - pipewire
+      - pipewire-pulse
+      - wireplumber
+
+- !pacman
+  name: Install Real-time Noise Suppression plugin
+  package: noise-suppression-for-voice
+
+- !pacman
+  name: Install Audio manager
+  package: "{{ item }}"
+  with:
+    items:
+      - pamixer
+      - pavucontrol
+
+# wait until JetPorch implement `scope` on the `sd_service` module
+- !shell
+  name: Activate PipeWire
+  cmd: "/sbin/systemctl --user -M {{ user }}@ enable pipewire pipewire-pulse"

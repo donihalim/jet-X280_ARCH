@@ -1,0 +1,6 @@
+---
+
+name: devel
+
+tasks:
+  - main.yml

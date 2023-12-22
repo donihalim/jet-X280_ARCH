@@ -1,0 +1,18 @@
+---
+
+- name: Thinkpad X280 Arch Linux setup
+  sudo: root
+
+  groups:
+    - all
+
+  vars:
+    user: donix
+
+  roles:
+    - { role: arch, tags: ['arch'] }
+    - { role: xorg, tags: ['xorg'] }
+    - { role: devel, tags: ['devel'] }
+    - { role: soundsys, tags: ['soundsys'] }
+    - { role: bluetooth, tags: ['bluetooth'] }
+    - { role: appearances, tags: ['appearances'] }

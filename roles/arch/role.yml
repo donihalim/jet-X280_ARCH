@@ -1,0 +1,6 @@
+---
+
+name: arch
+
+tasks:
+  - main.yml

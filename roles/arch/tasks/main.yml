@@ -1,0 +1,33 @@
+---
+
+- !copy
+  name: Configure pacman
+  src: pacman.conf
+  dest: /etc/pacman.conf
+  attributes:
+    owner: root
+    group: root
+    mode: 0o644
+
+- !pacman
+  name: Install mirrorlist manager
+  package: "{{ item }}"
+  with:
+    items:
+      - reflector
+      - rsync
+
+- !copy
+  name: Configure reflector
+  src: reflector.conf
+  dest: /etc/xdg/reflector/reflector.conf
+  attributes:
+    owner: root
+    group: root
+    mode: 0o644
+
+- !sd_service
+  name: Activate reflector.timer
+  service: reflector.timer
+  started: true
+  enabled: true

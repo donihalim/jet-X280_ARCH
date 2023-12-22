@@ -1,0 +1,20 @@
+---
+
+- !pacman
+  name: Install gtk themes
+  package: "{{ item }}"
+  with:
+    items:
+      - arc-gtk-theme
+      - epapirus-icon-theme
+      - gnome-themes-extra
+
+- !pacman
+  name: Install base fonts
+  package: "{{ item }}"
+  with:
+    items:
+      - noto-fonts
+      - noto-fonts-cjk
+      - noto-fonts-emoji
+      - noto-fonts-extra

@@ -1,0 +1,6 @@
+---
+
+name: bluetooth
+
+tasks:
+  - main.yml

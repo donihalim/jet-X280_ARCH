@@ -1,0 +1,6 @@
+---
+
+name: soundsys
+
+tasks:
+  - main.yml
