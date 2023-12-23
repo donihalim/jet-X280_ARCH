@@ -10,9 +10,9 @@
     user: donix
 
   roles:
-    - { role: arch, tags: ['arch'] }
-    - { role: xorg, tags: ['xorg'] }
-    - { role: devel, tags: ['devel'] }
-    - { role: soundsys, tags: ['soundsys'] }
-    - { role: bluetooth, tags: ['bluetooth'] }
-    - { role: appearances, tags: ['appearances'] }
+    - { role: 01_arch, tags: ['arch'] }
+    - { role: 02_xorg, tags: ['xorg'] }
+    - { role: 03_devel, tags: ['devel'] }
+    - { role: 04_soundsys, tags: ['soundsys'] }
+    - { role: 05_bluetooth, tags: ['bluetooth'] }
+    - { role: 06_appearances, tags: ['appearances'] }
