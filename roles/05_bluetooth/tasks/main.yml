@@ -1,7 +1,7 @@
 ---
 
 - !pacman
-  name: Install bluetooh daemon
+  name: Install bluetooth daemon
   package: "{{ item }}"
   with:
     items:
@@ -9,7 +9,7 @@
       - bluez-utils
 
 - !pacman
-  name: Install bluetooh manager
+  name: Install bluetooth manager
   package: blueman
 
 - !sd_service
